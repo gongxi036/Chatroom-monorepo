@@ -74,6 +74,7 @@ pnpm dev:server
   - 作用：同时执行多个命令
   - 示例：`pnpm run dev:client & pnpm run dev:server`
   - 适用场景：需要同时启动多个独立命令时
+  - 注意：`&` 在 Windows 上可能不支持，建议使用 `concurrently` 工具
 
 ## 项目功能
 

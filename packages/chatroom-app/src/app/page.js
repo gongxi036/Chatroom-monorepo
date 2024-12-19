@@ -1,6 +1,7 @@
 'use client'
 import { useState, useEffect } from "react"
 import io from "socket.io-client"
+import { formatMessageTime } from "@chatroom/helper"
 
 export default function Home() {
   const [socket, setSocket] = useState(null)
@@ -20,6 +21,8 @@ export default function Home() {
   const handleSendMessage = () => {
     socket.emit("message", inputMessage)
     setInputMessage("")
+    const formattedTime = formatMessageTime(new Date())
+    console.log(formattedTime)
     setMessages([...messages, {
       text: inputMessage,
       sender: "Me"

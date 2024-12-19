@@ -5,7 +5,10 @@
     "dev:client": "pnpm --filter chatroom-app dev",
     "dev:server": "pnpm --filter chatroom-server dev",
     "dev": "pnpm -r dev",
-    "dev:all": "pnpm run dev:client & pnpm run dev:server",
+    "dev:all": "concurrently \"pnpm run dev:server\" \"pnpm run dev:client\"",
     "build": "pnpm run --parallel build"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.0"
   }
-} 
+}
