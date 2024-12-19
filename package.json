@@ -1,0 +1,11 @@
+{
+  "name": "chatroom-monorepo",
+  "private": true,
+  "scripts": {
+    "dev:client": "pnpm --filter chatroom-app dev",
+    "dev:server": "pnpm --filter chatroom-server dev",
+    "dev": "pnpm -r dev",
+    "dev:all": "pnpm run dev:client & pnpm run dev:server",
+    "build": "pnpm run --parallel build"
+  }
+} 
